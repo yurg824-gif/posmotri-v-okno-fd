@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -17,6 +20,7 @@ html {
   font-size: 18px;
   background-color: #1b1919;
 }
+
 
 h1,
 h2,
@@ -48,4 +52,329 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  display: flex;
+  align-items: end;
+  margin: auto;
+  gap: 30px;
+}
+
+.result__video-container {
+  position: relative;
+  margin-top: 80px;
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* сохранит пропорции и заполнит весь контейнер */
+  object-position: center;
+}
+
+/* Search form */
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.search-form__fieldset {
+  border: 0;
+}
+
+.search-form__fieldset-title {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  line-height: normal;
+  padding-bottom: 5px;
+  padding-left: 3px;
+}
+
+.search-form__textfield {
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  border-left: none;
+  border-right: none;
+  padding: 7px 10px 2.5px 0;
+  inline-size: 225px;
+  margin-bottom: 5px;
+  appearance: none;
+}
+
+.search-form__textfield:active {
+  outline: 1px solid #FFF;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: none;
+}
+
+.search-form__textfield::placeholder {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color:rgb(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus-visible { /*TODO*/
+  outline: none;
+}
+
+.search-form__textfield:focus { /*TODO*/
+  outline: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  padding-bottom: 10px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  border: 1px solid white;
+  padding: 1px;
+
+}
+
+.search-form__pseudo-checkbox::after {
+  content:'';
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after{
+  opacity: 1;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.search-form__label:hover {
+  text-decoration: underline 1px #FFF;
+  text-underline-offset: 5px;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+
+.search-form__label:has(:focus) {
+  outline: none;
+}
+
+.search-form__label-text {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.search-form__label-text:hover {
+  text-decoration: underline;
+}
+
+.search-form__pseudo-checkbox:hover ~ .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__label:has(input:focus-within) {/*TODO*/
+  border: 1px solid white;
+}
+
+.button {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  border: 1px solid #fff;
+  padding: 6px 0;
+  margin-bottom: 3px;
+}
+
+.button:hover {
+  text-decoration: underline 1px #FFF;;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  top: 20px;
+  left: 517px;
+  gap: 10px;
+  opacity: 1;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  align-self: flex-end;
+}
+
+.more-button {
+  width: 391px;
+  margin: 2px;
+}
+
+.title {
+  opacity: 1;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 92%;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.content__accent {
+  color: #545050;
+}
+
+/* Список карточек */
+.content__details {
+  flex-grow: 1;
+  width: 400px;
+  height: 100%;
+}
+
+.content__list-container {
+  position: relative;
+  margin-top: 25px;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.content__list {
+  gap: 30px;
+}
+
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-bottom: 30px;
+}
+
+.content__card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid white;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+.content__video-card-description-container {
+  opacity: 1;
+  max-width: 192px;
+  flex-grow: 1;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;    /* запрет переноса строки */
+  overflow: hidden;       /* скрываем всё, что выходит за пределы элемента */
+  text-overflow: ellipsis;/* добавляем многоточие в конец усечённой строки */
+  line-height: 1;
+}
+
+.content__video-card-description {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-thumbnail {
+  flex-shrink: 0;
+  width: 194px;
+  height: 103px;
+  opacity: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
