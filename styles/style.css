@@ -63,10 +63,10 @@ ol {
 
 .result__video-container {
   position: relative;
-  margin-top: 80px;
+  margin-top: 75px;
   width: 711px;
   height: 386px;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .result__video {
@@ -89,9 +89,9 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: inherit;  /* Испр. после ревью 1*/
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;  /* Испр. после ревью 1*/
   line-height: 100%;
   line-height: normal;
   padding-bottom: 5px;
@@ -100,14 +100,17 @@ ol {
 
 .search-form__textfield {
   background-color: transparent;
-  color: white;
+  color: currentColor; /* Испр. после ревью 1*/
+  font-family: inherit; /* Испр. после ревью 1*/
+  font-size: inherit; /* Испр. после ревью 1*/
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   border-left: none;
   border-right: none;
-  padding: 7px 10px 2.5px 0;
+  padding-top: 3px;
+  padding-bottom: 1px;
   inline-size: 225px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   appearance: none;
 }
 
@@ -124,18 +127,18 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: inherit;
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;
   line-height: 100%;
   color:rgb(255 255 255 / 0.7);
 }
 
-.search-form__textfield:focus-visible { /*TODO*/
+.search-form__textfield:focus-visible {
   outline: none;
 }
 
-.search-form__textfield:focus { /*TODO*/
+.search-form__textfield:focus {
   outline: none;
 }
 
@@ -178,11 +181,6 @@ ol {
   cursor: pointer;
 }
 
-.search-form__label:hover {
-  text-decoration: underline 1px #FFF;
-  text-underline-offset: 5px;
-}
-
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #FFF;
   outline-offset: 1px;
@@ -193,34 +191,36 @@ ol {
 }
 
 .search-form__label-text {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: inherit;  /* Испр. после ревью 1*/
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;  /* Испр. после ревью 1*/
   line-height: 100%;
 }
 
-.search-form__label-text:hover {
-  text-decoration: underline;
+.search-form__label:hover .search-form__label-text { /* Испр. после ревью 1*/
+  text-decoration: underline 1px #FFF;
+  text-underline-offset: 5px;
 }
 
 .search-form__pseudo-checkbox:hover ~ .search-form__label-text {
-  text-decoration: underline;
+  text-decoration: underline 1px #FFF;;
+  text-underline-offset: 5px;
 }
 
-.search-form__label:has(input:focus-within) {/*TODO*/
+.search-form__label:has(input:focus-within) {
   border: 1px solid white;
 }
 
 .button {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: inherit;
   font-weight: 700;
-  font-size: 18px;
+  font-size: inherit;
   line-height: 100%;
   text-align: center;
   background-color: transparent;
   color: inherit;
   cursor: pointer;
-  border: 1px solid #fff;
+  border: 1px solid currentColor; /* Испр. после ревью 1*/
   padding: 6px 0;
   margin-bottom: 3px;
 }
@@ -264,7 +264,7 @@ ol {
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
-  line-height: 92%;
+  line-height: 94%;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
@@ -283,8 +283,7 @@ ol {
   position: relative;
   margin-top: 25px;
   height: 300px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-y: auto; /* Испр. после ревью 1*/
 }
 
 .content__list {
@@ -351,13 +350,15 @@ ol {
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: inherit;
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;
+  line-height: 16.2px;
   color: white;
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-top: 6px;
 }
 
 .content__video-card-thumbnail {
